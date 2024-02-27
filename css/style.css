@@ -13,6 +13,7 @@ button {
     width: 25%;
     height:100%;
     font-size:75px;
+    background-color: lightgray;
 }
 
 .operande {
