@@ -34,9 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         isResultDisplayed = true;
                     }
                 } else if (!isResultDisplayed && button[i].value == "suppr."){
-                    expression = res.textContent.trim().match(regex);
-                    expression.pop();
-                    res.innerHTML = expression;
+                   res.innerHTML = res.textContent.trim().slice(0,-1);
                 } else if (isResultDisplayed && button[i].value == "suppr.") {
                     res.innerHTML = "";
                     isResultDisplayed = false;
