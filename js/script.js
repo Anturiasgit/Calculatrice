@@ -92,9 +92,13 @@ function calcul(tab) {
             tab2 = tab2.concat(tab);
             break;
         case '/':
-            tab2.push(diviser(tab[0], tab[2]));
-            tab = tab.slice(3);
-            tab2 = tab2.concat(tab);
+            if(tab[2] == 0){
+               tab2[0] = "Division par 0 impossible";
+            } else {
+                tab2.push(diviser(tab[0], tab[2]));
+                tab = tab.slice(3);
+                tab2 = tab2.concat(tab);
+            }
             break;
         default:
             if (tab[3] != '*' && tab[3] != '/') {
