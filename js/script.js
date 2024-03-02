@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function (event) {
                 let expression;
+
                 event.target.style.backgroundColor = "white";
-                if (!isResultDisplayed && button[i].value != "suppr.") {
+                if (!isResultDisplayed && button[i].value != "effacer" && button[i].value != "effacer_tout") {
                     res.innerHTML += button[i].value;
                     if (button[i].value == "=") {
                         expression = res.textContent.trim().match(regex);
@@ -33,15 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         res.innerHTML += resultat;
                         isResultDisplayed = true;
                     }
-                } else if (!isResultDisplayed && button[i].value == "suppr."){
-                   res.innerHTML = res.textContent.trim().slice(0,-1);
-                } else if (isResultDisplayed && button[i].value == "suppr.") {
+                } else if (!isResultDisplayed && button[i].value == "effacer") {
+                    res.innerHTML = res.textContent.trim().slice(0, -1);
+                } else if (!isResultDisplayed && button[i].value == "effacer_tout") {
+                    res.innerHTML = "";
+                } else if (isResultDisplayed && button[i].value == "effacer_tout") {
                     res.innerHTML = "";
                     isResultDisplayed = false;
                 }
-            }
-        );
-
+            });
     }
 
 });
@@ -92,8 +93,8 @@ function calcul(tab) {
             tab2 = tab2.concat(tab);
             break;
         case '/':
-            if(tab[2] == 0){
-               tab2[0] = "Division par 0 impossible";
+            if (tab[2] == 0) {
+                tab2[0] = "Division par 0 impossible";
             } else {
                 tab2.push(diviser(tab[0], tab[2]));
                 tab = tab.slice(3);
@@ -108,7 +109,7 @@ function calcul(tab) {
             } else {
                 tab2 = tab2.concat(tab.slice(0, 1));
                 tab2 = tab2.concat(calcul(tab.slice(1)));
-            }                        
+            }
     }
 
     if (tab2.length > 1) {
@@ -119,3 +120,4 @@ function calcul(tab) {
     }
 
 }
+
