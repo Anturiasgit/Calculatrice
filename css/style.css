@@ -1,8 +1,13 @@
-.row {
-    margin-top:50px; 
+body {
+    background-color: #99B5DD;
 }
 
-.ligne {
+.row {
+    margin-top:25px; 
+    border-width: medium;
+}
+
+.ligne,#ligneres {
     display:flex;
     flex-wrap:wrap;
     height:125px;
@@ -13,7 +18,11 @@ button {
     width: 25%;
     height:100%;
     font-size:75px;
-    background-color: lightgray;
+    background-color: blue;
+}
+
+#ligneres {
+    height: 80px;
 }
 
 .operande {
@@ -33,6 +42,51 @@ button {
     width:95%;
     border: 2px solid black;
     border-top-width: 15px;
-    font-size:75px;
+    border-top-color: black;
+    font-size:50px;
     word-wrap: break-word;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: blue;
+    background-color: lightblue;
 }
+
+#bordersept {
+    border-top-left-radius: 15px;
+}
+
+#borderfois {
+    border-top-right-radius: 15px;
+}
+
+
+@media screen and (max-width: 720px) {
+
+    .row {
+        margin-top: 25px;
+    }
+
+    .ligne,#ligneres {
+        display:flex;
+        flex-wrap:wrap;
+        height: 100px;
+    }
+
+    button {
+        font-size: 30px;
+    } 
+
+    #effacer,#effacer_tout{
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    #res {
+        font-size: 25px;
+    }
+
+    #ligneres {
+        height: 50px;
+    }
+  }
+  

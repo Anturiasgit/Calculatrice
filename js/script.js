@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button[i].addEventListener(
             "mouseover",
             function (event) {
-                event.target.style.backgroundColor = "grey";
+                event.target.style.backgroundColor = "lightblue";
             }
         );
 
@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         resultat = calcul(expression);
                         res.innerHTML += resultat;
                         isResultDisplayed = true;
+                        
                     }
                 } else if (!isResultDisplayed && button[i].value == "effacer") {
                     res.innerHTML = res.textContent.trim().slice(0, -1);
@@ -65,6 +66,10 @@ function diviser(num1, num2) {
 
 function calcul(tab) {
     let tab2 = [];
+
+    if(tab.length == 1) {
+        return tab[0];
+    }
 
     switch (tab[1]) {
         case '+':
