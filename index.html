@@ -1,93 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/script.js"></script>
     <title>Calculatrice en javascript</title>
 </head>
+
+ <!-- La calculatrice est intégrée dans une seule div (class=row), elle-même divisée en 5 div (class=ligne). 
+      Les 4 premières lignes contiennent toutes des boutons : les chiffres, les opérandes, le point et 
+      les boutons de suppression. La dernière est réservée à l'affichage du résultat.-->
+
 <body>
     <section>
         <div class="container">
-        
             <div class="row">
-                   <div class="ligne">
-                     <button value="7" id="bordersept">
+                <div class="ligne">
+                    <button value="7" id="bordersept">
                         7
-                    </button> 
+                    </button>
                     <button value="8">
                         8
-                    </button> 
+                    </button>
                     <button value="9">
                         9
-                    </button> 
+                    </button>
                     <button value="/" class="operande">
                         /
-                    </button> 
+                    </button>
                     <button value="*" class="operande" id="borderfois">
                         *
-                    </button> 
-                   </div>      
-                   
-                   <div class="ligne">
+                    </button>
+                </div>
+
+                <div class="ligne">
                     <button value="4">
-                       4
-                   </button> 
-                   <button value="5">
-                       5
-                   </button> 
-                   <button value="6">
-                       6
-                   </button> 
-                   <button value="-" class="operande">
-                    -
-                   </button> 
-                   <button value="+" class="operande">
-                    +
-                   </button> 
-                  </div>    
+                        4
+                    </button>
+                    <button value="5">
+                        5
+                    </button>
+                    <button value="6">
+                        6
+                    </button>
+                    <button value="-" class="operande">
+                        -
+                    </button>
+                    <button value="+" class="operande">
+                        +
+                    </button>
+                </div>
 
-                  <div class="ligne">
+                <div class="ligne">
                     <button value="1">
-                       1
-                   </button> 
-                   <button value="2">
-                       2
-                   </button> 
-                   <button value="3">
-                       3
-                   </button> 
-                   <button value="=" id="egal">
-                    =
-                    </button> 
-                  </div> 
-                  
-                  <div class="ligne">
-                    <button value=".">
-                       .
-                   </button> 
-                   <button value="0">
-                       0
-                   </button> 
-                   <button value="effacer" id="effacer">
-                       Effacer
-                   </button> 
-                   <button value="effacer_tout" id="effacer_tout">
-                       Effacer tout
-                    </button> 
-                  </div> 
+                        1
+                    </button>
+                    <button value="2">
+                        2
+                    </button>
+                    <button value="3">
+                        3
+                    </button>
+                    <button value="=" id="egal">
+                        =
+                    </button>
+                </div>
 
-                  <div id="ligneres">
-                   <div id="res">
-                    
+                <div class="ligne">
+                    <button value=".">
+                        .
+                    </button>
+                    <button value="0">
+                        0
+                    </button>
+                    <button value="effacer" id="effacer">
+                        Effacer
+                    </button>
+                    <button value="effacer_tout" id="effacer_tout">
+                        Effacer tout
+                    </button>
+                </div>
+
+                <div id="ligneres">
+                    <div id="res">
+
                     </div>
-                  </div> 
+                </div>
             </div>
         </div>
     </section>
 </body>
-</html>
 
-    
+</html>

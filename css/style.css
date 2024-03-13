@@ -3,7 +3,7 @@ body {
 }
 
 .row {
-    margin-top:25px; 
+    margin-top:25px;  /* Afin d'avoir une calculatrice qui ne colle pas le haut de la page */
     border-width: medium;
 }
 
@@ -35,7 +35,7 @@ button {
 
 #effacer,#effacer_tout{
     font-size: 35px;
-    font-weight: 500;
+    font-weight: 500; 
 }
 
 #res {
@@ -44,7 +44,7 @@ button {
     border-top-width: 15px;
     border-top-color: black;
     font-size:50px;
-    word-wrap: break-word;
+    word-wrap: break-word; 
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     color: blue;
@@ -59,7 +59,20 @@ button {
     border-top-right-radius: 15px;
 }
 
+/* Lorsque le curseur survole un bouton */
+button:hover { 
+    background-color: lightblue;
+} 
 
+/* Lorsqu'un bouton est cliqué */
+button:active {
+    background-color: white;
+} 
+
+
+
+/* Gestion de l'affichage pour les écrans d'une largeur inférieure à 720px. 
+                        Le site est donc responsive */
 @media screen and (max-width: 720px) {
 
     .row {
