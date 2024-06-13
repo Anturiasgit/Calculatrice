@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {     // "DOMContentLoaded" nécessaire car sans lui, les fonctions sont appelés avant que le contenu intégral de la page ne termine soit chargé
     let button = document.getElementsByTagName("button");
     let res = document.getElementById("res");
-    const regex = /(-?\d+(\.\d+)?|[+\-*/])/g;
+    const regex = /(\d+(\.\d+)?|[-+*/])/g;
     let isResultDisplayed = false;
     let expression;     /* pour l'expression du calcul */
 
@@ -68,7 +68,12 @@ function calcul(tab) {
         return tab[0];
     }
 
-    switch (tab[1]) {       // "tab[0] étant un nombre, on se focalise sur la valeur de tab[1]" 
+
+
+
+    if(!Number(tab[1])) {
+   
+        switch (tab[1]) {       // "tab[0] étant un nombre, on se focalise sur la valeur de tab[1]" 
         case '+':
             if (tab[3] != '*' && tab[3] != '/') {       // Gestion des priorités de calcul en vérifiant si l'opérande qui suit est prioritaire ou non 
                 tab2.push(add(tab[0], tab[2]));     // Appel de la fonction d'addition sur les opérateurs concernés et ajout du résultat dans un nouveau tableau : "tab2" 
@@ -89,7 +94,7 @@ function calcul(tab) {
                 tab2 = tab2.concat(calcul(tab.slice(2)));      
             }
             break;
-        case '*':       // Procédé similaire à l'addition et à la soustraction, sans vérification de la priorité car la multiplication est prioritaire */
+        case '*':       // Procédé similaire à l'addition et à la soustraction, sans vérification de la priorité car la multiplication est prioritaire 
             tab2.push(multiplier(tab[0], tab[2]));      
             tab = tab.slice(3);   
             tab2 = tab2.concat(tab);
@@ -106,6 +111,10 @@ function calcul(tab) {
         default:
         // Aucune action nécessaire ici
         break;
+    } 
+    } else if(Number(tab[1])&&tab[0] == '-'){
+        tab.unshift(0);
+        return calcul(tab);
     }
 
     if (tab2.length > 1) {      // Si le tableau nouvellement formé contient plus d'une case, c'est que les calculs ne sont pas terminés, alors on rappelle la fonction sur ce tableau
@@ -116,4 +125,3 @@ function calcul(tab) {
     }
 
 }
-
