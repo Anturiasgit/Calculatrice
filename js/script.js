@@ -71,7 +71,7 @@ function calcul(tab) {
 
 
 
-    if(!Number(tab[1])) {
+    if(!Number(tab[1])) { // Pour être sûr que le 2ème élément du tableau de l'expression soit un opérande
    
         switch (tab[1]) {       // "tab[0] étant un nombre, on se focalise sur la valeur de tab[1]" 
         case '+':
@@ -113,7 +113,7 @@ function calcul(tab) {
         break;
     } 
     } else if(Number(tab[1])&&tab[0] == '-'){
-        tab.unshift(0);
+        tab.unshift(0); // Cette méthode permet de gérer les calculs avec des nombres négatifs
         return calcul(tab);
     }
 
