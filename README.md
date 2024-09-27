@@ -21,7 +21,7 @@ Clonez le repository :
 
 1. Dans un terminal, tapez la commande :
 
-git clone https://github.com/Anturiasgit/Calculatrice.git
+`git clone https://github.com/Anturiasgit/Calculatrice.git`
 
 2. Ouvrez le fichier "index.html" dans votre navigateur.
 
